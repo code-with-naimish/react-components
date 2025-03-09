@@ -1,4 +1,4 @@
-import { Link } from 'react-router'
+import { NavLink } from 'react-router'
 import './App.css'
 import RootNavs from './components/root-navs'
 
@@ -29,9 +29,16 @@ function App() {
 
           <nav className=' flex-1 overflow-y-auto' >
 
-            {navLinks.map((item, i) => {
-              return <Link to={item.path} key={i} className='block px-4 py-3 font-medium hover:bg-blue-500/10 hover:text-blue-500  border-l-4  border-transparent hover:border-blue-500  transition-all' >
-                {item.label}</Link>
+            {navLinks?.map((item, i) => {
+              return <NavLink to={item?.path} key={i}
+                className={({ isActive }) =>
+                  [
+                    isActive ? "bg-blue-500/10 text-blue-500 border-blue-500" : "border-transparent",
+                    "block px-4 py-3 font-medium hover:bg-blue-500/10 hover:text-blue-500  border-l-4     transition-all"
+                  ].join(" ")
+                }
+              >
+                {item?.label}</NavLink>
             })}
 
           </nav>
