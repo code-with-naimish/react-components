@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router'
 import './App.css'
 import RootNavs from './components/root-navs'
-
+import { FaGithub } from 'react-icons/fa6';
 
 const navLinks = [
   {
@@ -43,12 +43,15 @@ function App() {
 
           </nav>
         </aside>
-        <div className=' ml-64 flex-1  '>
-          <header className='flex  justify-between items-center gap-6 bg-blue-400 border-b border-gray-200 fixed top-0 left-64 right-0'>
-            <p>hgkd</p>
-            <p>hgkd</p>
+        <div className=' ml-64 flex-1 flex flex-col overflow-x-auto  '>
+          <header className='flex  justify-between items-center gap-6 px-4 py-3.5 bg-white border-b border-gray-200 fixed top-0 left-64 right-0'>
+            <h1 className="text-xl text-primary font-medium">Welcome!
+            </h1>
+            <a href="https://github.com/code-with-naimish" target='_blank' className='flex items-center   text-xl justify-center w-10 h-10 rounded-full  border border-gray-200'>
+              <FaGithub /></a>
           </header>
-          <main className=' mt-10'>
+          <main className='flex-1 mt-[65px]  p-6 overflow-y-auto'>
+
             <RootNavs />
           </main>
         </div>
