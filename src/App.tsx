@@ -2,6 +2,7 @@ import { NavLink } from 'react-router'
 import './App.css'
 import RootNavs from './components/root-navs'
 import { FaGithub } from 'react-icons/fa6';
+import { useState } from 'react';
 
 const navLinks = [
   {
@@ -18,11 +19,21 @@ const navLinks = [
 
 function App() {
 
+  const [showSidebar, setShowSidebar] = useState<boolean>(true);
+
+  const toggleAside = () => {
+    if (showSidebar) {
+      setShowSidebar(false)
+    } else {
+      setShowSidebar(true)
+    }
+  }
+
   return (
     <>
       {/* <RootNavs /> */}
       <div className='flex bg-gray-100 min-h-screen'>
-        <aside className='border-r border-gray-200 bg-white  w-64 fixed inset-y-0 flex flex-col'>
+        <aside className={` ${showSidebar ? 'translate-x-0' : '-translate-x-full'} transition-all duration-300 border-r border-gray-200 bg-white  w-64 fixed inset-y-0 flex flex-col`}  >
           <div className='px-4 py-3 flex-none'>
             <img className='w-40 mx-auto' src="https://limecabs.in/svgs/logo.svg" alt="logo" />
           </div>
@@ -43,8 +54,10 @@ function App() {
 
           </nav>
         </aside>
-        <div className=' ml-64 flex-1 flex flex-col overflow-x-auto  '>
-          <header className='flex  justify-between items-center gap-6 px-4 py-3.5 bg-white border-b border-gray-200 fixed top-0 left-64 right-0'>
+        <div className={`${showSidebar ? 'ml-64' : ''} flex-1 flex flex-col overflow-x-auto`}>
+          <header className={`${showSidebar ? 'left-64' : 'left-0'} flex  justify-between items-center gap-6 px-4 py-3.5 bg-white border-b border-gray-200 fixed top-0  right-0`}>
+            <button onClick={toggleAside}>hello</button>
+
             <h1 className="text-xl text-primary font-medium">Welcome!
             </h1>
             <a href="https://github.com/code-with-naimish" target='_blank' className='flex items-center   text-xl justify-center w-10 h-10 rounded-full  border border-gray-200'>
