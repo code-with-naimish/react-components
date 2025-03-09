@@ -34,8 +34,9 @@ function App() {
   return (
     <>
       {/* <RootNavs /> */}
-      <div className='flex bg-gray-100 min-h-screen'>
-        <aside className={`z-50 ${showSidebar ? 'translate-x-0' : 'md:translate-x-0 -translate-x-full'}   transition-all duration-300 border-r border-gray-200 bg-white  w-64 fixed inset-y-0 flex flex-col`}  >
+      <div className='relative flex bg-gray-100 min-h-screen'>
+        {showSidebar && <div onClick={closeAside} className=' backdrop-blur-sm md:hidden block bg-blue-500/10 absolute inset-0 z-50'></div>}
+        <aside className={`z-[60] ${showSidebar ? 'translate-x-0' : 'md:translate-x-0 -translate-x-full'}   transition-all duration-300 border-r border-gray-200 bg-white  w-64 fixed inset-y-0 flex flex-col`}  >
           <button onClick={closeAside} className='text-lg absolute top-2 right-2 md:hidden block'>
             <MdOutlineClose />
           </button>
@@ -46,7 +47,7 @@ function App() {
           <nav className=' flex-1 overflow-y-auto' >
 
             {navLinks?.map((item, i) => {
-              return <NavLink to={item?.path} key={i}
+              return <NavLink onClick={closeAside} to={item?.path} key={i}
                 className={({ isActive }) =>
                   [
                     isActive ? "bg-blue-500/10 text-blue-500 border-blue-500" : "border-transparent",
@@ -72,7 +73,7 @@ function App() {
             <a href="https://github.com/code-with-naimish" target='_blank' className='flex items-center   text-xl justify-center w-10 h-10 rounded-full  border border-gray-200'>
               <FaGithub /></a>
           </header>
-          <main className='flex-1 mt-[65px]  p-6 overflow-y-auto'>
+          <main className='flex-1 mt-[69px]  p-6 overflow-y-auto'>
 
             <RootNavs />
           </main>
