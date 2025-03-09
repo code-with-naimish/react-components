@@ -4,6 +4,7 @@ import RootNavs from './components/root-navs'
 import { FaGithub } from 'react-icons/fa6';
 import { useState } from 'react';
 import { RiMenu4Fill } from 'react-icons/ri';
+import { MdOutlineClose } from 'react-icons/md';
 
 const navLinks = [
   {
@@ -20,21 +21,24 @@ const navLinks = [
 
 function App() {
 
-  const [showSidebar, setShowSidebar] = useState<boolean>(true);
+  const [showSidebar, setShowSidebar] = useState<boolean>(false);
 
   const toggleAside = () => {
-    if (showSidebar) {
-      setShowSidebar(false)
-    } else {
-      setShowSidebar(true)
-    }
+    setShowSidebar(prev => !prev)
+  }
+
+  const closeAside = () => {
+    setShowSidebar(false)
   }
 
   return (
     <>
       {/* <RootNavs /> */}
       <div className='flex bg-gray-100 min-h-screen'>
-        <aside className={` ${showSidebar ? 'translate-x-0' : '-translate-x-full'} transition-all duration-300 border-r border-gray-200 bg-white  w-64 fixed inset-y-0 flex flex-col`}  >
+        <aside className={`z-50 ${showSidebar ? 'translate-x-0' : 'md:translate-x-0 -translate-x-full'}   transition-all duration-300 border-r border-gray-200 bg-white  w-64 fixed inset-y-0 flex flex-col`}  >
+          <button onClick={closeAside} className='text-lg absolute top-2 right-2 md:hidden block'>
+            <MdOutlineClose />
+          </button>
           <div className='px-4 py-3 flex-none'>
             <img className='w-40 mx-auto' src="https://limecabs.in/svgs/logo.svg" alt="logo" />
           </div>
@@ -55,8 +59,8 @@ function App() {
 
           </nav>
         </aside>
-        <div className={`${showSidebar ? 'ml-64' : ''} transition-all duration-300 flex-1 flex flex-col overflow-x-auto`}>
-          <header className={`${showSidebar ? 'left-64' : 'left-0'} transition-all duration-300 flex  justify-between items-center gap-6 px-4 py-3.5 bg-white border-b border-gray-200 fixed top-0  right-0`}>
+        <div className="ml-0 md:ml-64 transition-all duration-300 flex-1 flex flex-col overflow-x-auto">
+          <header className="left-0 md:left-64 transition-all duration-300 flex  justify-between items-center gap-6 px-4 py-3.5 bg-white border-b border-gray-200 fixed top-0  right-0">
             <div className='md:hidden flex items-center gap-4'>
               <button onClick={toggleAside} className='flex-none cursor-pointer flex items-center   text-xl justify-center w-10 h-10 rounded-lg  bg-blue-500/10 text-blue-500'><RiMenu4Fill /></button>
               <div className='  flex-none'>
