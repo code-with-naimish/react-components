@@ -3,6 +3,7 @@ import './App.css'
 import RootNavs from './components/root-navs'
 import { FaGithub } from 'react-icons/fa6';
 import { useState } from 'react';
+import { RiMenu4Fill } from 'react-icons/ri';
 
 const navLinks = [
   {
@@ -54,11 +55,15 @@ function App() {
 
           </nav>
         </aside>
-        <div className={`${showSidebar ? 'ml-64' : ''} flex-1 flex flex-col overflow-x-auto`}>
-          <header className={`${showSidebar ? 'left-64' : 'left-0'} flex  justify-between items-center gap-6 px-4 py-3.5 bg-white border-b border-gray-200 fixed top-0  right-0`}>
-            <button onClick={toggleAside}>hello</button>
-
-            <h1 className="text-xl text-primary font-medium">Welcome!
+        <div className={`${showSidebar ? 'ml-64' : ''} transition-all duration-300 flex-1 flex flex-col overflow-x-auto`}>
+          <header className={`${showSidebar ? 'left-64' : 'left-0'} transition-all duration-300 flex  justify-between items-center gap-6 px-4 py-3.5 bg-white border-b border-gray-200 fixed top-0  right-0`}>
+            <div className='md:hidden flex items-center gap-4'>
+              <button onClick={toggleAside} className='flex-none cursor-pointer flex items-center   text-xl justify-center w-10 h-10 rounded-lg  bg-blue-500/10 text-blue-500'><RiMenu4Fill /></button>
+              <div className='  flex-none'>
+                <img className='w-28 mx-auto' src="https://limecabs.in/svgs/logo.svg" alt="logo" />
+              </div>
+            </div>
+            <h1 className="text-xl text-primary font-medium hidden md:block">Welcome!
             </h1>
             <a href="https://github.com/code-with-naimish" target='_blank' className='flex items-center   text-xl justify-center w-10 h-10 rounded-full  border border-gray-200'>
               <FaGithub /></a>
