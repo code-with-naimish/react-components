@@ -30,7 +30,8 @@ function App() {
           <nav className=' flex-1 overflow-y-auto' >
 
             {navLinks.map((item, i) => {
-              return <Link className='block px-4 py-3 font-medium hover:bg-gray-500  border-l-4 border-transparent  transition-all duration-300' to={item.path} key={i}>{item.label}</Link>
+              return <Link to={item.path} key={i} className='block px-4 py-3 font-medium hover:bg-blue-500/10 hover:text-blue-500  border-l-4  border-transparent hover:border-blue-500  transition-all' >
+                {item.label}</Link>
             })}
 
           </nav>
