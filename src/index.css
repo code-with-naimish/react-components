@@ -1,1 +1,6 @@
 @import "tailwindcss";
+@layer components {
+  .form-control {
+    @apply w-full border border-gray-300 rounded-lg px-3 py-1  ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2;
+  }
+}
