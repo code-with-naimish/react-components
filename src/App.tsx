@@ -73,6 +73,7 @@ function App() {
             <a href="https://github.com/code-with-naimish" target='_blank' className='flex items-center   text-xl justify-center w-10 h-10 rounded-full  border border-gray-200'>
               <FaGithub /></a>
           </header>
+
           <main className='flex-1 mt-[69px]  p-6 overflow-y-auto'>
 
             <RootNavs />
