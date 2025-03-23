@@ -2,7 +2,6 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import PrimaryBtn from "../components/primary-btn"
 import { useState } from "react"
 import UserCard from "../components/user-card"
-import { DiVim } from "react-icons/di"
 
 
 type Inputs = {
@@ -99,7 +98,10 @@ export default function Home() {
           <p>No user created yet!</p>
         </div> :
           <div className="grid  sm:grid-cols-2 grid-col-1 gap-4">
-            <UserCard />
+            {users?.map((item, i) => {
+              return <UserCard key={i} user={item} />
+            })}
+
           </div>}
       </div>
 
