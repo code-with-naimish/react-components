@@ -13,7 +13,7 @@ type Inputs = {
 }
 
 
-export default function Home() {
+export default function UsersRhf() {
   const {
     register,
     handleSubmit,

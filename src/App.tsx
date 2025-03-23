@@ -8,14 +8,9 @@ import { MdOutlineClose } from 'react-icons/md';
 
 const navLinks = [
   {
-    label: "Home", path: "/"
+    label: "Users RHF", path: "/"
   },
-  {
-    label: "About", path: "/about"
-  },
-  {
-    label: "Login", path: "/login"
-  }
+
 
 ]
 
