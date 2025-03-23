@@ -3,4 +3,8 @@
   .form-control {
     @apply w-full border border-gray-300 rounded-lg px-3 py-1  ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2;
   }
+
+  .card {
+    @apply bg-white rounded-lg p-5;
+  }
 }

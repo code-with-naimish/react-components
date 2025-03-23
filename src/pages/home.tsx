@@ -1,6 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form"
 import PrimaryBtn from "../components/primary-btn"
 import { useState } from "react"
+import UserCard from "../components/user-card"
 
 
 type Inputs = {
@@ -35,7 +36,7 @@ export default function Home() {
   return (
     <div className="max-w-3xl  mx-auto px-4">
       <h2 className="text-2xl font-semibold mb-4">Create User</h2>
-      <div className="bg-white rounded-lg p-5 " >
+      <div className="card" >
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid sm:grid-cols-2 grid-cols-1 gap-4">
 
@@ -91,12 +92,9 @@ export default function Home() {
           </div>
         </form>
       </div>
-      <ul>
-        <li className="flex items-center justify-between gap-4"><span>Name:</span>Nams<span></span></li>
-        <li className="flex items-center justify-between gap-4"><span>E-mail:</span><span>abc@gmail.com</span></li>
-        <li className="flex items-center justify-between gap-4"><span>Age:</span><span>33</span></li>
-        <li className="flex items-center justify-between gap-4"><span>Phone-number</span>57847567<span></span></li>
-      </ul>
+      <br />
+      <UserCard />
+
     </div>
   )
 }
