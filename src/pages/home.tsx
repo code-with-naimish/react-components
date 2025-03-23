@@ -1,9 +1,10 @@
 import { useForm, SubmitHandler } from "react-hook-form"
 import PrimaryBtn from "../components/primary-btn"
-
+import { useState } from "react"
 
 
 type Inputs = {
+  id: number,
   name: string,
   email: string,
   age: number,
@@ -15,10 +16,18 @@ export default function Home() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<Inputs>()
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
+  const [users, setUsers] = useState<Inputs[]>([])
 
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+
+    data.id = Date.now()
+
+    setUsers(prev => [data, ...prev]);
+    reset();
+  }
 
 
 
@@ -82,6 +91,12 @@ export default function Home() {
           </div>
         </form>
       </div>
+      <ul>
+        <li className="flex items-center justify-between gap-4"><span>Name:</span>Nams<span></span></li>
+        <li className="flex items-center justify-between gap-4"><span>E-mail:</span><span>abc@gmail.com</span></li>
+        <li className="flex items-center justify-between gap-4"><span>Age:</span><span>33</span></li>
+        <li className="flex items-center justify-between gap-4"><span>Phone-number</span>57847567<span></span></li>
+      </ul>
     </div>
   )
 }
