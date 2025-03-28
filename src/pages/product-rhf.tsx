@@ -50,16 +50,6 @@ export default function UsersRhf() {
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <label className=" font-medium" htmlFor="description">Description
-                <span className="ml-1 text-red-500">*</span>
-              </label>
-
-              <input type="description" className="form-control" {...register("description", { required: "description is required" })} />
-              {errors.description && <span className="text-sm text-red-500">{errors.description.message}</span>}
-
-            </div>
-
-            <div className="flex flex-col gap-1.5">
               <label className=" font-medium" htmlFor="price">Price
               </label>
 
@@ -67,6 +57,17 @@ export default function UsersRhf() {
               {errors.price && <span className="text-sm text-red-500">{errors.price.message}</span>}
 
             </div>
+
+            <div className="flex flex-col sm:col-span-2 gap-1.5">
+              <label className=" font-medium" htmlFor="description">Description
+                <span className="ml-1 text-red-500">*</span>
+              </label>
+              <textarea className="form-control" {...register("description", { required: "description is required" })} name="description" id="description" cols={30} rows={5}></textarea>
+              {errors.description && <span className="text-sm text-red-500">{errors.description.message}</span>}
+
+            </div>
+
+
 
 
           </div>
