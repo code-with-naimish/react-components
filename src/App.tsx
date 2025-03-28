@@ -10,6 +10,9 @@ const navLinks = [
   {
     label: "Users RHF", path: "/"
   },
+  {
+    label: "Product RHF", path: "/product"
+  },
 
 
 ]
