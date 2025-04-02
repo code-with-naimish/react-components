@@ -12,7 +12,7 @@ type Inputs = {
 }
 
 
-export default function UsersRhf() {
+export default function ProductRhf() {
   const {
     register,
     handleSubmit,

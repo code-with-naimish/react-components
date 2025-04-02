@@ -9,9 +9,11 @@ const ProductCard = (props: {
 }) => {
   return (
     <div className="card">
-      <p className="flex items-center justify-between gap-4"> <span className="opacity-60">Name</span> <span className=" text-right">{props?.product?.name}</span> </p>
-      <p className="flex items-center justify-between gap-4"> <span className="opacity-60">Description</span> <span className=" text-right">{props?.product?.description}</span> </p>
-      <p className="flex items-center justify-between gap-4"> <span className="opacity-60">Price</span> <span className=" text-right">{props?.product?.price}</span> </p>
+      <div className="flex justify-between items-start gap-5">
+        <h2 className="font-semibold text-xl mb-auto ">{props.product.name}</h2>
+        <p className=" text-base text-nowrap text-blue-400">₹ <span className="font-semibold">{props.product.price}</span></p>
+      </div>
+      <p className=" text-sm text-gray-400">{props.product.description}</p>
 
     </div>
   )
