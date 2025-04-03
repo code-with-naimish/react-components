@@ -13,6 +13,9 @@ const navLinks = [
   {
     label: "Product RHF", path: "/product"
   },
+  {
+    label: "Game List", path: "/game"
+  },
 
 
 ]
