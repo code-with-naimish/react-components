@@ -5,6 +5,8 @@ import { FaGithub } from 'react-icons/fa6';
 import { useState } from 'react';
 import { RiMenu4Fill } from 'react-icons/ri';
 import { MdOutlineClose } from 'react-icons/md';
+import { ToastContainer } from 'react-toastify';
+
 
 const navLinks = [
   {
@@ -79,6 +81,12 @@ function App() {
           </header>
 
           <main className='flex-1 mt-[69px]  p-6 overflow-y-auto'>
+
+            <ToastContainer
+              position="bottom-right"
+              autoClose={3000}
+              theme="light"
+            />
 
             <RootNavs />
           </main>

@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { toast } from 'react-toastify';
+
+
 
 interface User {
   id: number;
@@ -21,7 +24,9 @@ const JsFetch = () => {
       // console.log(data);
       setUsers(data);
     } catch (error) {
-
+      toast("Please create some user", {
+        type: "warning"
+      })
       console.error(error)
     } finally {
       setLoading(false)
@@ -55,7 +60,11 @@ const JsFetch = () => {
           </ul>}
 
       </div>
+
+
     </div>
+
+
   )
 }
 
