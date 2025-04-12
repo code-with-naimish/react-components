@@ -16,6 +16,9 @@ const navLinks = [
   {
     label: "Game List", path: "/game"
   },
+  {
+    label: "Fetch API", path: "/fetch"
+  },
 
 
 ]
