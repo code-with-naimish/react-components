@@ -71,9 +71,9 @@ const ToDoList = () => {
             <div className=" space-y-3">
               {tasks?.map((task, index) => {
                 return <div className="card" key={index}>
-                  <div className="flex justify-between gap-3 items-center ">
-                    <span>{task}</span>
-                    <div className="flex items-center gap-3">
+                  <div className="flex justify-between gap-3  md:items-center md:flex-row flex-col ">
+                    <span className="break-all">{task}</span>
+                    <div className="flex md:items-center md:flex-row flex-col gap-3">
                       <OutlineBtn disabled={isEditingNow} onclick={() => editTask(index)} title="Edit" />
                       <DangerOutlineBtn disabled={isEditingNow} onclick={() => deleteTask(index)} title="Delete" />
                     </div>
