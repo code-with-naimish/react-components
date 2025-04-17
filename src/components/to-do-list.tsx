@@ -7,6 +7,7 @@ const ToDoList = () => {
 
   const [tasks, setTasks] = useState<string[]>([]);
   const [newTask, setNewTask] = useState<string>('');
+  const [editIndex, setEditIndex] = useState<number | null>(null)
 
   function handleInputChange(event: { target: { value: SetStateAction<string>; }; }) {
     setNewTask(event.target.value)
@@ -27,6 +28,7 @@ const ToDoList = () => {
   function updateTask(index: number) {
     const selectedtask = tasks[index]
     setNewTask(selectedtask)
+    setEditIndex(index)
   }
 
   return (
@@ -53,9 +55,9 @@ const ToDoList = () => {
                   <div className="flex justify-between gap-3 items-center ">
                     <span>{task}</span>
                     <div className="flex items-center gap-3">
-                      <OutlineBtn onclick={() => updateTask(index)} title="Edit" />
+                      <OutlineBtn disabled={editIndex !== null} onclick={() => updateTask(index)} title="Edit" />
 
-                      <DangerOutlineBtn onclick={() => deleteTask(index)} title="Delete" />
+                      <DangerOutlineBtn disabled={editIndex !== null} onclick={() => deleteTask(index)} title="Delete" />
                     </div>
                   </div>
                 </div>
