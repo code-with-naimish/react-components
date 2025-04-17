@@ -1,5 +1,7 @@
 import { SetStateAction, useState } from "react"
 import PrimaryBtn from "./primary-btn";
+import OutlineBtn from "./outline-btn";
+import DangerOutlineBtn from "./danger-outline-btn";
 
 const ToDoList = () => {
 
@@ -51,8 +53,9 @@ const ToDoList = () => {
                   <div className="flex justify-between gap-3 items-center ">
                     <span>{task}</span>
                     <div className="flex items-center gap-3">
-                      <PrimaryBtn onclick={() => deleteTask(index)} title="Delete" />
-                      <PrimaryBtn onclick={() => updateTask(index)} title="Update" />
+                      <OutlineBtn onclick={() => updateTask(index)} title="Edit" />
+
+                      <DangerOutlineBtn onclick={() => deleteTask(index)} title="Delete" />
                     </div>
                   </div>
                 </div>
