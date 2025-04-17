@@ -21,6 +21,9 @@ const navLinks = [
   {
     label: "Fetch API", path: "/fetch"
   },
+  {
+    label: "To-Do List", path: "/list"
+  },
 
 
 ]
